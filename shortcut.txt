@@ -1,0 +1,15 @@
+03/02/2026
+ctrl + ? --comment
+ALt +z --Wrapping
+shift + ALt + Arrow mark --clone
+ctrl +d --changing multiple 
+pretag
+lorem--dummy text
+li*5 -- 5 list auto
+li{item-$}*4
+th{heading $}*5
+tr>td{Data 2$}*5
+table>(tr>(th*5))*5
+table>(tr>(th*5))>(tr>td*5)*4
+
+ctrl+? -- comment return

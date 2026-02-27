@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        /* ===== Global Styles ===== */
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8FAFC;
+            color: #111827;
+        }
+
+        h2, h4{
+            color: #1E3A8A;
+        }
+
+        section{
+            padding: 20px;
+        }
+
+        /* ===== Sticky Header ===== */
+        header{
+            text-align: center;
+            background-color: #1E3A8A;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1{
+            margin: 0;
+            color: #E0F2FE;
+        }
+
+        /* ===== Profile Card ===== */
+        .profile-box{
+            position: relative;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .profile-img{
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 50%;
+            border: 4px solid #3B82F6;
+        }
+
+        /* ===== Badge ===== */
+        .badge{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #F59E0B;
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* ===== Details ===== */
+        .details{
+            text-align: center;
+        }
+
+        /* ===== Hobbies ===== */
+        .hobbies{
+            display: flex;
+            gap: 30px;
+            padding-left: 20px;
+            font-size: larger;
+        }
+
+        .hobbies li{
+            list-style-type: square;
+            font-style: oblique;
+            color: #374151;
+        }
+
+        /* ===== Skills ===== */
+        .skills li{
+            list-style: none;
+            display: inline-block;
+            margin: 8px;
+            padding: 6px 12px;
+            background-color: #DBEAFE;
+            color: #1E3A8A;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* ===== Projects ===== */
+        .projects{
+            display: flex;
+            gap: 20px;
+            text-align: justify;
+        }
+
+        .projects p{
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* ===== Hidden Note ===== */
+        .note{
+            display: none;
+        }
+
+        /* ===== Fixed Contact ===== */
+        .span1{
+            background-color: #3B82F6;
+            color: white;
+            padding: 10px 14px;
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        /* ===== Footer ===== */
+        footer{
+            text-align: center;
+            background-color: #020617;
+            color: #E5E7EB;
+            padding: 12px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align:center; font-style: italic;">My Information</h2>
+
+    <header>
+        <h1>SAI SANKET M</h1>
+    </header>
+
+    <section>
+
+        <!-- Profile Card -->
+        <div class="profile-box">
+            <span class="badge">STUDENT</span>
+            <img class="profile-img" src="../media/myphoto.jpg" alt="My Photo">
+        </div>
+
+        <!-- Details -->
+        <div class="details">
+            <p><strong>Name:</strong> SAI SANKET M</p>
+            <p><strong>Roll No:</strong> 1AY22CS159</p>
+            <p><strong>Branch:</strong> CSE</p>
+        </div>
+
+        <!-- Education -->
+        <h4>Education</h4>
+        <ul>
+            <li>ACHARYA COLLEGE — B.E. CSE (2022–2026)</li>
+            <li>V.P.H HANCHINMANI — PUC (2020–2022)</li>
+            <li>R.V.S.R SCHOOL — 8th to 10th (2018–2020)</li>
+        </ul>
+
+        <!-- Hobbies -->
+        <h4>Hobbies</h4>
+        <ul class="hobbies">
+            <li>Travelling</li>
+            <li>Badminton</li>
+            <li>Learning</li>
+        </ul>
+
+        <!-- Skills -->
+        <h4>Skills</h4>
+        <ul class="skills">
+            <li>Python</li>
+            <li>Java</li>
+            <li>HTML, CSS, JS</li>
+        </ul>
+
+        <!-- Projects -->
+        <h4>Projects</h4>
+        <div class="projects">
+            <p><strong>1. Library Management System</strong><br>
+            A system designed to automate library operations such as book issuing, returns, cataloging, member management, and fine calculation.</p>
+
+            <p><strong>2. Online Food Delivery System</strong><br>
+            A platform that allows users to order food online, make digital payments, and track deliveries in real time.</p>
+
+            <p><strong>3. Personal Portfolio Website</strong><br>
+            A digital profile showcasing skills, education, projects, and contact details to build a professional online presence.</p>
+        </div>
+
+    </section>
+
+    <span class="span1">Contact: 9483347855</span>
+
+    <footer>
+        <p>&copy; 2026 SAI SANKET M. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

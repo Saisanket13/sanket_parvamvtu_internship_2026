@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Property</title>
+
+    <style>
+        
+        .container {
+            position: relative;
+            height: 800px;
+            border: 1px dashed #999;
+            padding: 10px;
+        }
+
+        .container1{
+            /* position: relative; */
+            height: 800px;
+            border: 10px dashed #999;
+            padding: 10px;
+        }
+
+        /* Common box style */
+        .box {
+            margin: 5px;
+            padding: 10px;
+            color: #000;
+        }
+
+        /* Position types */
+        .static {
+            position: static;
+            background-color: lightblue;
+        }
+
+        .relative {
+            position: relative;
+            top: 10px;
+            left: 50px;
+            background-color: lightgreen;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 150px;
+            right: 10px;
+            background-color: lightcoral;
+            z-index: 16;
+        }
+        .absolute {
+            position: absolute;
+            top: 200px;
+            left: 50px;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 10px;
+            z-index: 10;
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Positioning Property</h1>
+
+    <p>
+        The <b>position</b> property specifies the type of positioning method
+        used for an element (static, relative, fixed, absolute, or sticky).
+    </p>
+
+    <pre>
+        1. static   → Default, normal document flow
+        2. relative → Positioned relative to itself
+        3. fixed    → Positioned relative to viewport
+        4. absolute → Positioned relative to nearest positioned ancestor
+        5. sticky   → Switches between relative and fixed
+    </pre>
+
+    <div class="container">
+        <div class="box static">Static Position</div>
+        <div class="box relative">Relative Position</div>
+        <div class="box fixed">Fixed Position</div>
+       <div class="container1">
+         <div class="box absolute">Absolute Position</div>
+       </div>
+        <div class="box sticky">Sticky Position (scroll)lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.</div>
+        </div>
+    </div>
+
+</body>
+</html>

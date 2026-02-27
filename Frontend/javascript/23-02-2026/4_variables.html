@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <h1>Variables in JavaScript</h1>
+    <p>4 Ways to create a variable</p>
+    <h3>1.Automatically</h3>
+    <h3>2.var keyword(not a block scope)-we can redeclare</h3>
+    <h3>3.let keyword(it is  block scope)-we can redeclare</h3>
+    <h3>4.const keyword</h3>
+
+    <script>
+        first_name="JK";
+        console.log("The first name is:",first_name);
+        var last_name="KJ";
+        console.log("The last_name is:",last_name);
+        let age=69;
+        console.log("The age is:",age);
+        const pi=3.14269;
+        console.log("The PI is:",pi);
+    </script>
+
+    <script>
+        var gender='M';
+        console.log("The gender is :",gender );
+        var gender='F';
+        console.log("The gender is :",gender );
+
+        let marks=66;
+        console.log("The Marks is:",marks);
+
+        marks=96;
+        console.log("The Marks is:",marks);
+
+        const country="INDIA";
+        console.log("The Country is:",country);
+
+        {
+            var city="Bengaluru";
+            console.log("The City is:",city);  
+        }
+        console.log("The City is:",city);
+
+        {
+            var Village="Karatagi";
+            console.log("The Village is:",Village);  
+        }
+        console.log("The Village is:",Village);
+    </script>
+</body>
+</html>

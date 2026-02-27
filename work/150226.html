@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Food Ordering Menu Page</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:20px;
+    background:#fafafa;
+    }
+
+/* HEADER */
+header{
+    text-align:center;
+}
+
+h1{
+    color:yellowgreen;
+    background:grey;
+    position:sticky;
+    top:0;
+    padding:10px;
+    border-radius:8px;
+}
+
+h1::first-letter{
+    color:darkgreen;
+}
+
+/* CATEGORY LIST */
+.category-list{
+    list-style:none;
+    padding:0;
+}
+
+.category-list li{
+    padding:6px 10px;
+    margin:4px 0;
+    border-radius:6px;
+}
+
+.category-list li:first-child{
+    background:bisque;
+    border-left:4px solid orange;
+}
+.category-list li:first-child::before{content:"🔥 ";}
+.category-list li:first-child::after{content:" Popular";font-size:12px;}
+
+.category-list li:nth-child(3n){
+    background:#f8d7da;
+    border-left:4px solid #dc3545;
+    font-weight:bold;
+}
+.category-list li:nth-child(3n)::before{content:"🧑‍🍳 ";}
+.category-list li:nth-child(3n)::after{content:" Chef Special";font-size:12px;}
+
+.category-list li:last-child{
+    background:darkgoldenrod;
+}
+.category-list li:last-child::before{content:"👌 ";}
+.category-list li:last-child::after{content:" New";font-size:12px;}
+
+
+/* MENU GRID */
+.menu-section{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+    grid-auto-flow:dense;
+}
+
+/* CARD */
+.food-card{
+    background:#f9f9f9;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    transition:.25s;
+}
+
+.food-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 18px rgba(0,0,0,.18);
+}
+
+.food-card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    display:block;
+}
+
+.food-info{
+    padding:14px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.food-name{
+    font-weight:bold;
+    color:crimson;
+    margin-bottom:6px;
+}
+
+.food-price{
+    font-size:18px;
+    margin:4px 0;
+}
+
+.food-description{
+    font-size:14px;
+    margin-bottom:auto;
+}
+
+.food-description::first-letter{
+    font-weight:bold;
+    font-style:italic;
+    font-size:18px;
+}
+
+/* ORDER BUTTON */
+.order-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:7px 12px;
+    background:gold;
+    color:black;
+    border:none;
+    border-radius:6px;
+    text-decoration:none;
+    cursor:pointer;
+    text-align:center;
+    font-weight:bold;
+}
+
+.order-btn:hover{background:darksalmon;}
+.order-btn:active{background:aqua;}
+
+
+/* EVEN / ODD INDICATOR */
+.food-card:nth-child(even)::before,
+.food-card:nth-child(odd)::before{
+    content:"";
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    position:absolute;
+    top:10px;
+    left:10px;
+}
+
+.food-card:nth-child(even)::before{background:green;}
+.food-card:nth-child(odd)::before{background:red;}
+
+
+/* FEATURED */
+.featured{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+@media (max-width:700px){
+    .featured{
+        grid-column:span 1;
+        grid-row:span 1;
+    }
+    .combo{
+        grid-column:span 1;
+    }
+}
+
+
+.featured::after{
+    content:"Popular";
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:red;
+    color:white;
+    padding:4px 6px;
+    border-radius:6px;
+    font-size:12px;
+}
+
+
+/* COMBO */
+.combo{
+    grid-column:span 2;
+    grid-row:span 1;
+    background:palevioletred;
+}
+
+.combo::after{
+    content:"Chef Special";
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:#dc3545;
+    color:white;
+    padding:4px 6px;
+    border-radius:6px;
+    font-size:12px;
+}
+
+
+/* DRINKS */
+.drink{
+    background:#e6f7ff;
+}
+
+.drink:nth-of-type(2n)::after{
+    content:"❄";
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+
+.drink:nth-of-type(3n)::after{
+    content:"☕";
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+
+.drink:last-of-type::before{
+    content:"Seasonal";
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    background:darkgreen;
+    color:white;
+    padding:4px 6px;
+    border-radius:6px;
+    font-size:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Austere</h1>
+<h4>The Best Food Ever Tasted</h4>
+</header>
+
+<section>
+<h3>Menu Categories</h3>
+<ul class="category-list">
+<li>Starters</li>
+<li>Soups</li>
+<li>Main Course</li>
+<li>Salads</li>
+<li>Pasta</li>
+<li>Desserts</li>
+<li>Beverages</li>
+<li>Drinks</li>
+</ul>
+</section>
+
+<section class="menu-section">
+<h3>Featured Items</h3>
+
+<div class="food-grid">
+
+<!-- FEATURED -->
+<div class="food-card featured">
+<img src="https://www.tasteofhome.com/wp-content/uploads/0001/01/Sun-Dried-Tomato-Bistro-Burgers_EXPS_HCA19_97844_C09_11_4b.jpg">
+<div class="food-info">
+<h3 class="food-name">Signature Gourmet Burger</h3>
+<p class="food-price">$24.99</p>
+<p class="food-description">Premium wagyu beef burger with truffle aioli.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+<!-- STARTERS -->
+<div class="food-card regular">
+<img src="https://thefoodcharlatan.com/wp-content/uploads/2023/05/Garlic-Bread-Recipe-15.jpg" alt="Garlic Bread">
+<div class="food-info">
+<h3 class="food-name">Garlic Bread</h3>
+<p class="food-price">$5.99</p>
+<p class="food-description">Toasted bread with herbs and butter.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+<div class="food-card regular">
+<img src="https://th.bing.com/th/id/OIP.MnedFEYpcSLX18MwBVRsaQHaJQ?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="food-info">
+<h3 class="food-name">French Fries</h3>
+<p class="food-price">$4.49</p>
+<p class="food-description">Crispy golden potato fries.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+<div class="food-card regular">
+<img src="https://th.bing.com/th/id/OIP.8YhFfC6v38Q-GHtJBGDvPgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="food-info">
+<h3 class="food-name">Veg Spring Rolls</h3>
+<p class="food-price">$6.99</p>
+<p class="food-description">Crunchy rolls stuffed with veggies.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+<!-- MAIN COURSE -->
+<div class="food-card regular">
+<img src="https://www.acouplecooks.com/wp-content/uploads/2022/10/Margherita-Pizza-093.jpg">
+<div class="food-info">
+<h3 class="food-name">Margherita Pizza</h3>
+<p class="food-price">$12.99</p>
+<p class="food-description">Fresh mozzarella and basil.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+
+
+
+<!-- COMBO -->
+<div class="food-card combo">
+<img src="https://mypromo.azureedge.net/promotions/promo.lk-promo-485050c23c624847947bcfbeb745349f.jpg
+">
+<div class="food-info">
+<h3 class="food-name">Family Combo Deal</h3>
+<p class="food-price">$39.99</p>
+<p class="food-description">2 pizzas + garlic bread + drinks.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+<!-- DESSERTS -->
+<div class="food-card regular">
+<img src="https://www.cookingclassy.com/wp-content/uploads/2021/03/chocolate-bundt-cake-6.jpg">
+<div class="food-info">
+<h3 class="food-name">Chocolate Cake</h3>
+<p class="food-price">$6.50</p>
+<p class="food-description">Rich dark chocolate delight.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+<div class="food-card regular">
+<img src="https://www.cuisinart.co.uk/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-uk-cuisinart-sfra-Library/default/dw02d70fe5/images/recipes/classic-vanilla-ice-cream.jpg?sw=1200&sh=1200&sm=fit">
+<div class="food-info">
+<h3 class="food-name">Vanilla Ice Cream</h3>
+<p class="food-price">$3.99</p>
+<p class="food-description">Classic creamy vanilla scoop.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+<div class="food-card regular">
+<img src="https://keviniscooking.com/wp-content/uploads/2019/12/Classic-Fluffy-Pancake-Recipe-6.jpg">
+<div class="food-info">
+<h3 class="food-name">Fluffy Pancakes</h3>
+<p class="food-price">$8.99</p>
+<p class="food-description">Served with maple syrup.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</div>
+
+<!-- DRINKS -->
+<article class="food-card drink">
+
+<img src="https://tse1.mm.bing.net/th/id/OIP.awzDrZu8VfZNt5Uy8x5B5QHaLT?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="food-info">
+<h3 class="food-name">Cold Coffee</h3>
+<p class="food-price">$4.99</p>
+<p class="food-description">Chilled creamy coffee.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</article>
+
+
+<article class="food-card drink">
+
+<img src="https://tse1.mm.bing.net/th/id/OIP.fVGlb185bMMygwalEe0rKwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="food-info">
+<h3 class="food-name">Fresh Lemon Juice</h3>
+<p class="food-price">$3.49</p>
+<p class="food-description">Refreshing citrus drink.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</article>
+
+
+<article class="food-card drink">
+<img src="https://bakerbynature.com/wp-content/uploads/2024/01/Hot-Chocolate-3.jpg">
+<div class="food-info">
+<h3 class="food-name">Hot Chocolate</h3>
+<p class="food-price">$5.25</p>
+<p class="food-description">Warm rich chocolate drink.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</article>
+
+
+<article class="food-card drink">
+<img src="https://tse3.mm.bing.net/th/id/OIP.lqvBq4fLChKo8C-Vq-v9NQHaLH?rs=1&pid=ImgDetMain&o=7&rm=3">
+<div class="food-info">
+<h3 class="food-name">Vanilla Milkshake</h3>
+<p class="food-price">$5.99</p>
+<p class="food-description">Thick creamy shake.</p>
+<a href="#" class="order-btn">Order Now</a>
+</div>
+</article>
+
+
+</div>
+
+</section>
+
+</body>
+</html>

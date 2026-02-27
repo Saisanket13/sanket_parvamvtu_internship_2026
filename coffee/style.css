@@ -1,0 +1,373 @@
+/* =====================================================
+   GOOGLE FONTS
+===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+
+/* =====================================================
+   GLOBAL RESET
+   - Removes default spacing
+   - Sets universal box-sizing
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins","sans-serif";
+}
+
+/* Body default styling */
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Remove list bullets */
+ul {
+    list-style: none;
+}
+
+/* Remove link underline */
+a {
+    text-decoration: none;
+}
+
+/* Reset button styles */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Make images responsive */
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* =====================================================
+   GLOBAL CONTAINER
+   - Controls max width
+   - Centers content
+===================================================== */
+.section-content{
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+.section-title{
+    padding: 60px 0 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--font-size-xl);
+}
+
+/* Decorative underline */
+.section-title::after{
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: var(--border-radius-s);
+    background-color: var(--primary-color);
+}
+
+
+/* =====================================================
+   ROOT VARIABLES (Design System)
+===================================================== */
+:root {
+
+  /* ---------- Colors ---------- */
+  --white-color: #fff;
+  --dark-color: #252525;
+  --primary-color: #3b141c;
+  --secondary-color: #f3961c;
+  --light-pink-color:#faf4f5;
+  --medium-gray-color: #ccc;
+
+  /* ---------- Font Sizes ---------- */
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.3rem;
+
+  /* ---------- Font Weights ---------- */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ---------- Border Radius ---------- */
+  --border-radius-s:8px;
+  --border-radius-m:30px;
+  --border-radius-circle:50%;
+
+  /* ---------- Layout Width ---------- */
+  --site-max-width:1300px;
+}
+
+
+/* =====================================================
+   HEADER / NAVBAR
+===================================================== */
+
+/* Fixed transparent glass header */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background: rgba(59, 20, 28, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar layout */
+header .navbar {
+    display: flex;
+    padding: 20px 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo styling */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-logo .nav-text {
+    color: var(--white-color);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Navigation menu layout */
+.navbar .nav-menu {
+    display: flex;
+    gap: 10px;
+}
+
+/* Navigation links */
+.navbar .nav-menu .nav-link {
+    padding: 10px 18px;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navbar .nav-menu .nav-link:hover {
+    color: var(--primary-color);
+    background: var(--secondary-color);
+}
+
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero-section{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+/* Hero content layout */
+.hero-section .section-content{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    margin: 50px;
+    color: var(--white-color);
+    justify-content: space-between;
+}
+
+/* Hero Title */
+.hero-details .title {
+    font-size: var(--font-size-xxl);
+    color: var(--secondary-color);
+    font-family: "Miniver" ,sans-serif;
+}
+
+/* Hero Subtitle */
+.hero-details .subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-top: 8px;
+    max-width: 70%;
+}
+
+/* Hero Description */
+.hero-details .description {
+    font-size: var(--font-size-m);
+    max-width: 70%;
+    margin:24px 0 40px;
+}
+
+/* Hero image */
+.hero-image-wrapper {
+    max-width: 500px;
+    margin-right: 30px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn {
+    padding: 10px 25px;
+    border: 2px solid transparent;
+    color: var(--primary-color);
+    border-radius: var(--border-radius-m);
+    background-color: var(--secondary-color);
+    font-weight: var(--font-weight-medium);
+}
+
+.buttons{
+    display: flex;
+    gap:23px;
+}
+
+/* Order button */
+.order-now {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.order-now:hover {
+    background: var(--white-color);
+}
+
+/* Contact button */
+.contact-us {
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    margin-left: 10px;
+}
+
+.contact-us:hover {
+    background: var(--white-color);
+    color: var(--primary-color);
+    border: var(--primary-color);
+}
+
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+
+.about-section{
+    padding: 120px 0;
+    background-color: var(--light-pink-color);
+}
+
+/* About layout */
+.about-section .section-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* About image */
+.about-image-wrapper .about-image{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius-circle);
+}
+
+/* About text */
+.about-details{
+    color: var(--dark-color);
+}
+
+/* About paragraph */
+.text{
+    text-align: center;
+    line-height: 30px;
+    margin:50px 0 30px;
+    font-size: var(--font-size-m);
+}
+
+/* Social icons container */
+.social-link-list{
+    display: flex;
+    gap:25px;
+    justify-content: center;
+}
+
+/* Social icon style */
+.social-link{
+    color: var(--primary-color);
+    font-size: var(--font-size-l);
+}
+
+.social-link:hover{
+    color: var(--secondary-color);
+}
+
+
+/* =====================================================
+   MENU SECTION
+===================================================== */
+
+.menu-section{
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    padding: 50px 0 100px;
+}
+
+/* Menu grid layout */
+.menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 110px;
+    justify-content: space-between;
+}
+
+/* Individual menu item */
+.menu-item{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: calc(100%/3-110px);
+}
+
+/* Menu image */
+.menu-image{
+    max-width: 83%;
+    aspect-ratio: 1;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+/* Menu title (duplicate selector kept as-is) */
+.menu-image{
+    margin: 12px 0;
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Menu text */
+.text{
+    font-size: var(--font-size-m);
+}
+

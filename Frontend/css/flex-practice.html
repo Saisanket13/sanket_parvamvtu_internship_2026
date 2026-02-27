@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display properties</title>
+    <style>
+        .box{
+            width: 1000px;
+            height: 550px;
+            border: 5px solid black;
+            display: flex;
+            /* flex-direction: row-reverse; */
+            /* start or flex-start are one and the same */
+            justify-content: space-evenly;
+            /* align-items: start; */
+            flex-wrap: wrap;
+            align-content: space-around;
+            gap: 20px;
+            flex-basis: 300px;
+        }
+
+        .small-box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: red;
+            color: white;
+            font-size: 25px;
+        }
+
+        .small-box-1{
+            flex-grow: 2;
+            flex-shrink: 2;
+        }
+
+        .small-box-2{
+            flex-grow: 1;
+        }
+
+        .small-box-3{
+            flex-grow: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="small-box small-box-1">Box 1</div>
+        <div class="small-box small-box-2">Box 2</div>
+        <div class="small-box small-box-3">Box 3</div>
+        <div class="small-box small-box-4">Box 4</div>
+        <div class="small-box small-box-5">Box 5</div>
+        <!-- <div class="small-box small-box-6">Box 6</div>
+        <div class="small-box small-box-7">Box 7</div>
+        <div class="small-box small-box-8">Box 8</div>
+        <div class="small-box small-box-9">Box 9</div>
+        <div class="small-box small-box-10">Box 10</div>
+        <div class="small-box small-box-11">Box 11</div>
+        <div class="small-box small-box-12">Box 12</div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional CSS Practice Project</title>
+
+<style>
+
+/* ================== RESET ================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+/* ================== BODY ================== */
+body{
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+body::selection{
+    background: black;
+    color: white;
+}
+
+/* ================== HEADER ================== */
+header{
+    background: #222;
+    padding: 20px;
+    color: white;
+}
+
+header h1::first-letter{
+    font-size: 50px;
+    color: orange;
+}
+
+/* ================== NAVIGATION ================== */
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav ul li:first-child{
+    font-weight: bold;
+}
+
+nav ul li:last-child{
+    color: yellow;
+}
+
+nav ul li:nth-child(3n){
+    background: #444;
+    padding: 5px;
+}
+
+/* Link States */
+nav a:link{
+    color: white;
+}
+
+nav a:visited{
+    color: lightgreen;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+nav a:active{
+    color: red;
+}
+
+nav a::before{
+    content: "🔗 ";
+}
+
+nav a::after{
+    content: " ✓";
+}
+
+/* ================== MAIN CONTENT ================== */
+main{
+    margin-top: 30px;
+}
+
+/* Descendant combinator */
+main article h2{
+    color: darkblue;
+}
+
+/* Child combinator */
+article > p{
+    margin: 10px 0;
+}
+
+/* First line + first letter */
+article p::first-line{
+    font-weight: bold;
+}
+
+article p::first-letter{
+    font-size: 30px;
+    color: crimson;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar ul{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar li:nth-child(2n)::before{
+    content: "⭐ ";
+}
+
+.sidebar li:nth-child(2n+1)::before{
+    content: "📌 ";
+}
+
+/* Adjacent sibling */
+.highlight + p{
+    background: yellow;
+    padding: 5px;
+}
+
+/* General sibling */
+.notice ~ p{
+    background: lightblue;
+}
+
+/* ================== FOOTER ================== */
+footer{
+    margin-top: 40px;
+    padding: 15px;
+    background: #333;
+    color: white;
+}
+
+footer p:last-child{
+    font-size: 18px;
+    color: orange;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Tech Blog</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <article>
+        <h2>Latest Article</h2>
+        <div>
+            <p class="highlight">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptas molestiae earum praesentium error.
+        </p>
+
+        <p>
+            This paragraph changes because it comes immediately after highlight.
+        </p>
+        </div>
+        <p class="notice">
+            Important notice paragraph.
+        </p>
+
+        <p>
+            This paragraph changes due to general sibling selector.
+        </p>
+
+        <p>
+            Another paragraph also affected by general sibling selector.
+        </p>
+    </article>
+
+    <aside class="sidebar">
+        <h2>Popular Topics</h2>
+        <ul>
+            <li>HTML Basics</li>
+            <li>CSS Selectors</li>
+            <li>Flexbox</li>
+            <li>Grid Layout</li>
+            <li>JavaScript</li>
+            <li>React</li>
+        </ul>
+    </aside>
+
+</main>
+
+<footer>
+    <p>© 2026 My Tech Blog</p>
+    <p>All rights reserved.</p>
+</footer>
+
+</body>
+</html>

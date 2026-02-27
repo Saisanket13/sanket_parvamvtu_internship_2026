@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austere</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* -------- Global -------- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        /* -------- Header -------- */
+        header {
+            text-align: center;
+            background-color: darkgreen;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: lightgreen;
+            margin: 0;
+        }
+
+        header p {
+            color: white;
+            font-size: 18px;
+            margin: 5px 0 0;
+        }
+
+        /* -------- Navigation -------- */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        nav ul li {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* -------- Headings -------- */
+        h4 {
+            color: red;
+            background-color: orange;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* -------- Content -------- */
+        p {
+            text-align: justify;
+        }
+
+        /* -------- Table -------- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* -------- Image -------- */
+        figure {
+            text-align: center;
+        }
+
+        /* -------- Form -------- */
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        form select,
+        form input[type="submit"] {
+            margin-top: 5px;
+            padding: 6px;
+        }
+
+        /* -------- Contact -------- */
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .contact-info i {
+            margin-right: 8px;
+        }
+
+        /* -------- Footer -------- */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: lightgray;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Austere</h1>
+        <p style="text-align: center;">Minimalist Design</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+            <li>Login</li>
+        </ul>
+    </nav>
+
+    <section>
+        <h4>Project Description</h4>
+        <p>Build real projects with step-by-step guidance.</p>
+        <p>
+            In the austere landscape, the barren trees stood as silent sentinels,
+            their skeletal branches reaching towards the gray sky.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Adipisci accusamus cupiditate praesentium.
+        </p>
+    </section>
+
+    <section>
+        <h4>Table</h4>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Ph.no</th>
+            </tr>
+            <tr><td>SSM</td><td>KRT</td><td>KA</td><td>XXX</td></tr>
+            <tr><td>VK</td><td>BLR</td><td>KR</td><td>YYY</td></tr>
+            <tr><td>AM</td><td>HYD</td><td>TG</td><td>ZZZ</td></tr>
+            <tr><td>BS</td><td>CHN</td><td>TS</td><td>WWW</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h4>Photos</h4>
+        <figure>
+            <img src="../media/homeill.jpg" alt="Home Illustration" width="600" height="400">
+            <figcaption>Home Illustration</figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h4>Admission Details</h4>
+        <form>
+            <label for="course">Course:</label>
+            <select id="course" name="course">
+                <option value="">-- Select Course --</option>
+                <option value="btech">B.Tech</option>
+                <option value="mtech">M.Tech</option>
+                <option value="bba">BBA</option>
+                <option value="mba">MBA</option>
+            </select>
+            <br>
+            <button class="btn" style="margin: 10px;">Submit</button>
+        </form>
+    </section>
+
+    <section>
+        <h4>Contact Information</h4>
+        <div class="contact-info">
+            <p><i class="fa-brands fa-facebook"></i> austere.Facebook</p>
+            <p><i class="fa-brands fa-twitter"></i> austere.Twitter</p>
+            <p><i class="fa-brands fa-instagram"></i> austere.Instagram</p>
+            <p><i class="fa-brands fa-linkedin"></i> austere.LinkedIn</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Austere Design. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

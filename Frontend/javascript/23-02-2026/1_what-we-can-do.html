@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>What We can do</h1>
+    <h3>1.we can change HTML content</h3>
+    <p id="demo">This is HTML content</p>
+    <button onclick="document.getElementById('demo').innerText='JS will change HTML content'">Change Content</button>
+
+    <!-- 2 -->
+     <h3>2.We Can change HTML attributes</h3>
+     <img src="./off image.jpeg" alt="OFF" id="img_id">
+     <button onclick="document.getElementById('img_id').setAttribute('src','./on image.jpeg')">Turn ON</button>
+     <button onclick="document.getElementById('img_id').setAttribute('src','./off image.jpeg')">Turn OFF</button>
+
+     <!-- 3 -->
+      <h3>1.we can change HTML Style</h3>
+    <p id="demo1">This is HTML green</p>
+    <button onclick="document.getElementById('demo1').style.color='green'">Change Content</button>
+<!-- 5 -->
+     <h3>1.we can change HTML Style</h3>
+    <p id="demo3">This is HTML green hidden</p>
+    <button onclick="document.getElementById('demo3').style.display='none'">Change Content</button>
+    <!-- 4 -->
+     <h3>1.we can change HTML Style</h3>
+    <p id="demo2" style="display: none;">This is HTML green hidden</p>
+    <button onclick="document.getElementById('demo2').style.display='block'">Show HTML</button>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <script src="./230226.js"></script>
+    <style>
+        *{
+            margin: 10px;
+        }
+        h2{
+            text-align: center;
+            background-color: chartreuse;
+            padding: 20px;
+            margin: 0;
+            color: darkslategrey;
+        }
+        .name{
+            background-color: aqua;
+            color: blue;
+            margin: 0;
+        }
+        .email{
+            background-color: brown;
+            color: aquamarine;
+            margin: 0;
+        }
+        .pwd{
+            background-color: darkmagenta;
+            color: black;
+            margin: 0;
+        }
+        .btn{
+            text-align: center;
+        }
+        .name, .email, .pwd {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Information</h2>
+    <div class="name">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" >
+    </div >
+    <div class="email">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"></div>
+    <div class="pwd">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"></div>
+    
+    <div class="btn">
+    <button onclick="externaljs()">Submit</button>
+</div>
+</body>
+</html>

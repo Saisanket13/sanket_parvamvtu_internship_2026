@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball</title>
+    <style>
+        body {
+            margin: 20px;
+            background-color: #e0e0e0;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+            position: relative;
+            background-color: #f5f5f5;
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+        }
+
+        .ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: bisque;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            
+            animation: diagonalBounce 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .second-ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: aquamarine;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            
+            animation: zigzagBounce 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .third-ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: greenyellow;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            
+            animation: verticalBounce 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .fourth-ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: hotpink;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            
+            animation: bounce 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Square pattern bounce */
+        @keyframes bounce {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            25% {
+                transform: translate(0px, 180px);
+            }
+            50% {
+                transform: translate(180px, 180px);
+                background-color: pink;
+            }
+            75% {
+                transform: translate(180px, 0px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        /* TRUE Diagonal bounce */
+        @keyframes diagonalBounce {
+            0%, 100% {
+                transform: translate(0px, 0px);
+            }
+            50% {
+                transform: translate(180px, 180px);
+            }
+            80% {
+                transform: translate(180px, 50px);
+                background-color: brown;
+            }
+        }
+
+        /* Zigzag bounce */
+        @keyframes zigzagBounce {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            33% {
+                transform: translate(90px, 60px);
+            }
+            45% {
+                transform: translate(50px, 180px);
+                background-color: indigo;
+            }
+            66% {
+                transform: translate(0px, 180px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        /* Simple vertical bounce */
+        @keyframes verticalBounce {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(180px);
+                background-color: coral;
+            }
+        }
+
+        .outerbox {
+            width: 100%;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #d0d0d0;
+            border: 3px solid #666;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .inner-box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            background-color: white;
+            animation: floatRotate 5s ease-in-out infinite; 
+        }
+
+        .box-1 {
+            background-color: #ffcccc;
+            text-align:center;
+           
+        }
+
+        .box-2 {
+            background-color: #ccffcc;
+            animation-delay: .5s;
+        }
+
+        .box-3 {
+            background-color: #ccccff;
+            align-items: center;
+        }
+
+        .box-4 {
+            background-color: #ffffcc;
+            animation-delay: .5s;
+        }
+
+        @keyframes floatRotate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(45deg);
+            }
+            50% {
+                transform: translateY(0px) rotate(90deg);
+            }
+            75% {
+                transform: translateY(-20px) rotate(135deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(180deg); /* ✅ CHANGED: was rotate(180deg), should be rotate(360deg) for full rotation */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="ball">SHET</div>
+    </div>
+    
+    <div class="box">
+        <div class="second-ball">REDDY</div>
+    </div>
+
+    <div class="box">  
+        <div class="third-ball">SSM</div>
+    </div>
+
+    <div class="box">  
+        <div class="fourth-ball">PARVAM</div>
+    </div>
+    
+    <div class="outerbox">
+        <div class="inner-box box-1">T</div>
+        <div class="inner-box box-2">I</div> 
+        <div class="inner-box box-3">M</div> 
+        <div class="inner-box box-4">E</div> 
+    </div>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball</title>
+    <style>
+        body {
+            margin: 20px;
+            background-color: #e0e0e0;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+            position: relative;
+            background-color: #f5f5f5;
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+        }
+
+        .ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: bisque;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            
+            animation: diagonalBounce 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .second-ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: aquamarine;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            
+            animation: zigzagBounce 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .third-ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: greenyellow;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            
+            animation: verticalBounce 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .fourth-ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: hotpink;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            
+            animation: bounce 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Square pattern bounce */
+        @keyframes bounce {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            25% {
+                transform: translate(0px, 180px);
+            }
+            50% {
+                transform: translate(180px, 180px);
+                background-color: pink;
+            }
+            75% {
+                transform: translate(180px, 0px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        /* TRUE Diagonal bounce */
+        @keyframes diagonalBounce {
+            0%, 100% {
+                transform: translate(0px, 0px);
+            }
+            50% {
+                transform: translate(180px, 180px);
+            }
+            80% {
+                transform: translate(180px, 50px);
+                background-color: brown;
+            }
+        }
+
+        /* Zigzag bounce */
+        @keyframes zigzagBounce {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            33% {
+                transform: translate(90px, 60px);
+            }
+            45% {
+                transform: translate(50px, 180px);
+                background-color: indigo;
+            }
+            66% {
+                transform: translate(0px, 180px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        /* Simple vertical bounce */
+        @keyframes verticalBounce {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(180px);
+                background-color: coral;
+            }
+        }
+
+        .outerbox {
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+            padding: 40px; /* ✅ INCREASED padding to contain boxes */
+            background-color: #d0d0d0;
+            border: 3px solid #666;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            position: relative; /* ✅ ADDED to contain animated boxes */
+            /* overflow: hidden; ✅ ADDED to prevent boxes from going outside */
+            /* min-height: 200px; ✅ ADDED minimum height */
+        }
+
+        .inner-box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            background-color: white;
+            animation: floatRotate 5s ease-in-out infinite;
+            display: flex; /* ✅ ADDED for centering text */
+            justify-content: center; /* ✅ ADDED for centering text */
+            align-items: center; /* ✅ ADDED for centering text */
+            font-weight: bold; /* ✅ ADDED for text styling */
+            font-size: 16px; /* ✅ ADDED for text styling */
+            color: #333; /* ✅ ADDED for text color */
+        }
+
+        .box-1 {
+            background-color: #ffcccc;
+        }
+
+        .box-2 {
+            background-color: #ccffcc;
+        }
+
+        .box-3 {
+            background-color: #ccccff;
+        }
+
+        .box-4 {
+            background-color: #ffffcc;
+        }
+
+        @keyframes floatRotate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(45deg);
+            }
+            50% {
+                transform: translateY(0px) rotate(90deg);
+            }
+            75% {
+                transform: translateY(-20px) rotate(135deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="ball">SHET</div>
+    </div>
+    
+    <div class="box">
+        <div class="second-ball">REDDY</div>
+    </div>
+
+    <div class="box">  
+        <div class="third-ball">SSM</div>
+    </div>
+
+    <div class="box">  
+        <div class="fourth-ball">PARVAM</div>
+    </div>
+    
+    <div class="outerbox">
+        <div class="inner-box box-1">BOX 1</div>
+        <div class="inner-box box-2">BOX 2</div> 
+        <div class="inner-box box-3">BOX 3</div> 
+        <div class="inner-box box-4">BOX 4</div> 
+    </div>
+</body>
+</html> -->

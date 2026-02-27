@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-4 task</title>
+</head>
+<body>
+    <h2>Tasks</h2>
+    <p>largest value</p>
+    <p>Even or odd</p>
+
+    <p>Multiply of  5 or not</p>
+    <p>Do-While loop</p>
+    <div id="demo"></div>
+    <script>
+
+        // -------- Largest of 3 numbers --------
+    const marks1 = +prompt("Enter marks 1:");
+    const marks2 = +prompt("Enter marks 2:");
+    const marks3 = +prompt("Enter marks 3:");
+
+    console.log("Marks:", marks1, marks2, marks3);
+
+    if (marks1 >= marks2 && marks1 >= marks3) {
+        console.log("Largest is Marks1:", marks1);
+    } 
+    else if (marks2 >= marks1 && marks2 >= marks3) {
+        console.log("Largest is Marks2:", marks2);
+    } 
+    else {
+        console.log("Largest is Marks3:", marks3);
+    }
+
+    // -------- Even or Odd --------
+    const dell= +prompt("Enter the number :");
+    console.log("The Entered Number is :",dell);
+
+    if(dell % 2 === 0){
+        console.log("The Number Is Even");
+    }
+    else{
+        console.log("The Number is Odd ");
+    }
+
+    // -------- Multiple of 5 --------
+    const hp = +prompt("Enter a number to check if it is multiple of 5:");
+    console.log("The number is:", hp);
+
+    if (hp % 5 === 0) {
+        console.log("It is a multiple of 5");
+    } 
+    else {
+        console.log("It is NOT a multiple of 5");
+    }
+
+    // -------- Do While Loop --------
+    let number;
+
+    do {
+        number = +prompt("Enter a number greater than 100:");
+        console.log("You entered:", number);
+    } 
+    while (number <= 100);
+
+    let numb=document.getElementById("demo").innerText
+    console.log(numb);
+</script>
+</body>
+</html>

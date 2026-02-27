@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Banner</title>
+<style>
+    body {
+        margin: 0;
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .banner {
+        width: 1584px;
+        height: 396px;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        position: relative;
+        overflow: hidden;
+        color: white;
+        padding-left: 220px;
+        padding-top: 110px;
+        box-sizing: border-box;
+    }
+
+    /* subtle blurred code background */
+    .banner::before {
+        content: "def train_model():\n    model.fit(data)\n    return accuracy";
+        position: absolute;
+        top: 40px;
+        right: 100px;
+        font-family: monospace;
+        font-size: 22px;
+        color: rgba(255,255,255,0.05);
+        white-space: pre;
+        transform: rotate(-5deg);
+    }
+
+    h1 {
+        font-size: 48px;
+        margin: 0;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 400;
+        margin-top: 18px;
+        color: #cbd5e1;
+    }
+
+    .stack {
+        margin-top: 25px;
+        font-size: 18px;
+        letter-spacing: 2px;
+        color: #38bdf8;
+    }
+
+    .line {
+        width: 80px;
+        height: 4px;
+        background: #38bdf8;
+        margin-top: 20px;
+        border-radius: 2px;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <h1>Building Intelligent Systems with Python & Machine Learning</h1>
+    <h2>Backend Development | IoT | Data-Driven Products</h2>
+    <div class="line"></div>
+    <div class="stack">Python • Flask • TensorFlow • SQL • IoT</div>
+</div>
+
+</body>
+</html>

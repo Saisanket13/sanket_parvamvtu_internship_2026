@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+
+    <style>
+        span {
+            background-color: red;
+        }
+
+        div {
+            background-color: blue;
+            color: white;
+            margin: 5px 0;
+            padding: 5px;
+        }
+
+        .inline-block {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .container {
+            display: flex;
+            gap: 10px;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+
+<h3>HTML Element Types</h3>
+
+<p>
+1. <b>Block elements</b> take full width and start from a new line.  
+Examples: h1–h6, p, div
+</p>
+
+<p>
+2. <b>Inline elements</b> do not take full width and do not start from a new line.  
+Examples: span, a
+</p>
+
+<p>
+<b>display</b> controls how an HTML element is displayed.
+</p>
+
+<pre>
+selector {
+    display: value;
+}
+</pre>
+
+<h3>1. display: block (default)</h3>
+<div>This is a block</div>
+<div>Level element</div>
+
+<h3>2. display: inline (default)</h3>
+<span>Hello</span>
+<span>World</span>
+
+<h3>3. display: inline-block</h3>
+<div class="inline-block">Block 1</div>
+<div class="inline-block">Block 2</div>
+
+<h3>4. display: none</h3>
+<div class="none">Hidden block (display:none)</div>
+<div>This block is visible</div>
+
+<h3>5. visibility: hidden</h3>
+<div>This block is visible</div>
+<div class="hidden">Hidden block (visibility:hidden)</div>
+<div>This block is visible</div>
+
+<h3>6.Display:Flex</h3>
+<div class="container">
+    <div>Flex Item 1</div>
+    <div class="hidden">Flex Item 2</div>
+    <div>Flex Item 3</div>
+    <div class="none">Flex Item 4</div>
+    <div>Flex Item 5</div>
+</div>
+
+</body>
+</html>
