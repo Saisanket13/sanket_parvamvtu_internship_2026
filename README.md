@@ -4,6 +4,13 @@ This repository documents the learning journey and web development projects comp
 
 ---
 
+## 🏢 Internship Details
+- **Organization**: Parvam Consultech
+- **Program**: Parvam VTU Internship 2026
+- **Domain**: Frontend Web Development
+
+---
+
 ## 📸 Project Preview
 
 ### Coffee Website
@@ -43,14 +50,14 @@ Contains core building blocks for different web interfaces:
 - **`html/`**: Template structures and page layouts.
 
 ### Coffee Project (`/coffee`)
-A dedicated web project focalizing on a coffee shop interface.
+A dedicated web project focused on a coffee shop interface.
 - `index.html`: Main entry point.
 - `style.css`: Custom styling for the coffee experience.
 
 ### Daily Practice (`/work`)
 A chronological record of HTML/CSS/JS exercises:
 - Naming convention: `DDMMYY.html` (e.g., `030226.html`).
-- Focus areas: Tables, CSS Pseudo-classes, and Semantic HTML.
+- Focus areas: Tables, CSS Pseudo-classes, Transitions, and Semantic HTML.
 
 ### Media & Assets (`/media`)
 Centralized storage for images and other media used across projects.
@@ -65,13 +72,6 @@ Includes a `shortcut.txt` for VS Code efficiency:
 - **`shift + alt + arrow`**: Clone Line.
 - **`ctrl + d`**: Multi-cursor selection.
 - **Emmet Abbreviations**: `li*5`, `table>(tr>(th*5))*5`, etc.
-
----
-
-## 🔗 Resources
-
-- **Official Registration**: [Student Registration Form](https://parvamconsultech.com/scholar/student-form/register)
-- **HTML Learning Notes**: [Parvam HTML Notes](https://tinyurl.com/parvam-html-notes)
 
 ---
 
