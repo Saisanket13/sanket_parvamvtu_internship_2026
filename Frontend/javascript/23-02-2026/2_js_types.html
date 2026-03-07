@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./2_js_types.js"></script>
+    
 </head>
 
 <body>
@@ -18,19 +18,40 @@
     </button>
 
     <!-- Internal JS -->
-    <button onclick="internaljs()">
-        Internal JS
-    </button>
+    <button onclick="internaljs()">Internal JS</button>
 
     <!-- External JS -->
     <button onclick="externaljs()">
         External JS
     </button>
-
+<!-- addEventListener JS -->
+    <button id="btn">addEventListener</button>
+<script src="./2_js_types.js"></script>
     <script>
-        function internaljs() {
-            document.getElementById('demo').innerHTML = 'Hello World';
+        // function internaljs() {
+        //     document.getElementById('demo').innerHTML = 'Hello World';
+        // }
+        // function internaljs() {
+        // const hello=document.getElementById('demo');
+        // hello.innerHTML='<h2>Hello World</h2><p>This is a paragraph.</p>';
+        // }
+        // const internaljs=()=> {
+        // const hello=document.getElementById('demo');
+        // hello.innerHTML='<h2>Hello World</h2><p>This is a paragraph.</p>';
+        // }
+
+        // Internal JS function
+        const internaljs = () => {
+            const hello = document.getElementById('demo');
+            hello.innerHTML = '<h2>Hello World</h2><p>This is a paragraph.</p>';
         }
+
+        // addEventListener
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+            const hello = document.getElementById('demo');
+            hello.innerHTML = '<h2>Hello World</h2>';
+        });
     </script>
 
 </body>
